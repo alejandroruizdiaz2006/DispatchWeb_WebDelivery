@@ -7,7 +7,7 @@ import Characters from './pages/characters/Characters';
 import Contact from './pages/contact/Contact';
 import Rss from './pages/rss/Rss';
 import Privacy from './pages/legal/Privacy';
-import Terms from './pages/legal/Terms';
+import Terms from '../pages/legal/Terms';
 
 function App() {
   return (
