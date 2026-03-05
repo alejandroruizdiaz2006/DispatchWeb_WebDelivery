@@ -2,7 +2,7 @@
 
 ## Tercera Entrega
 
-**URL del Proyecto en Firebase Hosting:** (https://dispatch-web-ard.web.app/rss)
+**URL del Proyecto en Firebase Hosting:** (https://dispatch-web-ard.web.app/home)
 
 **Pantallazo del Lector RSS:**
 ![Pantallazo RSS](./pantallazo-rss.png)
