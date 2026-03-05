@@ -1,4 +1,12 @@
 # DISPATCH FAN PROJECT
+
+## Tercera Entrega
+
+**URL del Proyecto en Firebase Hosting:** (https://dispatch-web-ard.web.app/rss)
+
+**Pantallazo del Lector RSS:**
+![Pantallazo RSS](./pantallazo-rss.png)
+
 ## About The Project
 This project is a fan-made website dedicated to the video game "Dispatch". It serves as an interactive wiki and information portal about the game's universe, characters, and mechanics.
 

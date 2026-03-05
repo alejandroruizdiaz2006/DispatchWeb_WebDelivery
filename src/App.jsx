@@ -6,6 +6,8 @@ import Home from './pages/home/Home';
 import Characters from './pages/characters/Characters';
 import Contact from './pages/contact/Contact';
 import Rss from './pages/rss/Rss';
+import Privacy from './pages/legal/Privacy';
+import Terms from './pages/legal/Terms';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path="/characters" element={<Characters />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/rss" element={<Rss />} />
+          <Route path="/privacidad" element={<Privacy />} />
+          <Route path="/condiciones" element={<Terms />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </main>

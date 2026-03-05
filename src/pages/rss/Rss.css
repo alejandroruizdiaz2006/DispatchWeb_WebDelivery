@@ -1,29 +1,108 @@
 .rss-page {
-  padding: 4rem 2rem;
-  text-align: center;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
   min-height: 60vh;
+}
+
+.rss-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
 }
 
 .rss-page h1 {
   color: #38bdf8;
-  margin-bottom: 1rem;
+  margin: 0;
 }
 
-.rss-container {
-  margin-top: 3rem;
-}
-
-.rss-button {
+.rss-raw-btn {
   background-color: #f97316;
   color: white;
-  padding: 1rem 2rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
   text-decoration: none;
-  border-radius: 8px;
   font-weight: bold;
-  font-size: 1.2rem;
+  transition: all 0.3s;
+  border: 1px solid #ea580c;
+  box-shadow: 0 4px 6px -1px rgba(249, 115, 22, 0.3);
+}
+
+.rss-raw-btn:hover {
+  background-color: #ea580c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px -1px rgba(249, 115, 22, 0.4);
+}
+
+.loading-text {
+  text-align: center;
+  color: #94a3b8;
+  font-family: monospace;
+}
+
+.rss-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.rss-card {
+  background-color: #1e293b;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #334155;
+  transition: transform 0.3s;
+}
+
+.rss-card:hover {
+  transform: translateY(-5px);
+}
+
+.rss-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.rss-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.rss-content h3 {
+  color: white;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.rss-content p {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.rss-link {
+  margin-top: auto;
+  display: inline-block;
+  background-color: #38bdf8;
+  color: #020617;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
   transition: background-color 0.3s;
 }
 
-.rss-button:hover {
-  background-color: #c2410c;
+.rss-link:hover {
+  background-color: #0284c7;
+  color: white;
 }

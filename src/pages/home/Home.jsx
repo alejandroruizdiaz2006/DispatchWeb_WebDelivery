@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs, addDoc, deleteDoc, updateDoc, doc } from 'firebase/firestore';
 import { db } from '../../firebase';
 import { teamZ, dispatchNetwork, villains } from '../../data/characters';
 import CharacterCard from '../../components/character-card/CharacterCard';
@@ -15,18 +15,51 @@ function Home() {
   const [incidents, setIncidents] = useState([]);
   const [filter, setFilter] = useState('Todos');
 
-  useEffect(() => {
-    const fetchIncidents = async () => {
-      const querySnapshot = await getDocs(collection(db, "incidents"));
-      const incidentsData = querySnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }));
-      setIncidents(incidentsData);
-    };
+  const [newTitle, setNewTitle] = useState('');
+  const [newStatus, setNewStatus] = useState('Activa');
+  const [newDescription, setNewDescription] = useState('');
 
+  const fetchIncidents = async () => {
+    const querySnapshot = await getDocs(collection(db, "incidents"));
+    const incidentsData = querySnapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    }));
+    setIncidents(incidentsData);
+  };
+
+  useEffect(() => {
     fetchIncidents();
   }, []);
+
+  const handleAddIncident = async (e) => {
+    e.preventDefault();
+    if (!newTitle || !newDescription) return;
+
+    await addDoc(collection(db, "incidents"), {
+      title: newTitle,
+      status: newStatus,
+      description: newDescription
+    });
+
+    setNewTitle('');
+    setNewStatus('Activa');
+    setNewDescription('');
+    fetchIncidents();
+  };
+
+  const handleDeleteIncident = async (id) => {
+    await deleteDoc(doc(db, "incidents", id));
+    fetchIncidents();
+  };
+
+  const handleUpdateIncident = async (id, currentStatus) => {
+    const nextStatus = currentStatus === 'Activa' ? 'Completada' : 'Activa';
+    await updateDoc(doc(db, "incidents", id), {
+      status: nextStatus
+    });
+    fetchIncidents();
+  };
 
   const filteredIncidents = filter === 'Todos' 
     ? incidents 
@@ -46,18 +79,47 @@ function Home() {
 
       <section className="home-section">
         <h2>Reportes de Incidentes</h2>
+
+        <div className="add-incident-container">
+          <form className="add-incident-form" onSubmit={handleAddIncident}>
+            <input 
+              type="text" 
+              placeholder="Título del incidente..." 
+              value={newTitle} 
+              onChange={(e) => setNewTitle(e.target.value)} 
+              required 
+            />
+            <select value={newStatus} onChange={(e) => setNewStatus(e.target.value)}>
+              <option value="Activa">Activa</option>
+              <option value="Completada">Completada</option>
+            </select>
+            <input 
+              type="text" 
+              placeholder="Descripción breve..." 
+              value={newDescription} 
+              onChange={(e) => setNewDescription(e.target.value)} 
+              required 
+            />
+            <button type="submit">➕ Añadir</button>
+          </form>
+        </div>
+
         <div className="filter-buttons">
           <button onClick={() => setFilter('Todos')} className={filter === 'Todos' ? 'active' : ''}>Todos</button>
           <button onClick={() => setFilter('Activa')} className={filter === 'Activa' ? 'active' : ''}>Activas</button>
           <button onClick={() => setFilter('Completada')} className={filter === 'Completada' ? 'active' : ''}>Completadas</button>
         </div>
+        
         <div className="incidents-grid">
           {filteredIncidents.map(incident => (
             <IncidentCard 
               key={incident.id}
+              id={incident.id}
               title={incident.title}
               status={incident.status}
               description={incident.description}
+              onDelete={handleDeleteIncident}
+              onUpdate={handleUpdateIncident}
             />
           ))}
         </div>

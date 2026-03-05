@@ -3,13 +3,18 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #0f172a;
+  background-color: #020617;
+  position: relative;
+  z-index: 200;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
 }
 
 .logo-img {
-  height: 50px; 
-  width: auto;  
-  display: block;
+  height: 40px;
 }
 
 .header-nav {
@@ -18,33 +23,79 @@
 }
 
 .header-nav a {
-  color: white;
+  color: #94a3b8;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
+.header-nav a:hover,
 .header-nav a.active {
   color: #38bdf8;
-  border-bottom: 2px solid #38bdf8;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.language-switch {
+  display: flex;
+  gap: 0.5rem;
 }
 
 .language-switch button {
-  background: transparent;
+  background-color: transparent;
   border: 1px solid #38bdf8;
   color: #38bdf8;
-  padding: 5px 10px;
-  margin-left: 5px;
+  padding: 0.2rem 0.5rem;
   border-radius: 4px;
   cursor: pointer;
+  transition: all 0.3s;
 }
 
 .language-switch button:hover {
-  background: #38bdf8;
-  color: #0f172a;
+  background-color: #38bdf8;
+  color: #020617;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0;
 }
 
 @media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block;
+  }
+
   .header-nav {
+    display: none;
     flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #020617;
+    padding: 0;
+    z-index: 100;
+    border-top: 1px solid #1e293b;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  }
+
+  .header-nav.open {
+    display: flex;
+  }
+
+  .header-nav a {
+    padding: 1rem 2rem;
+    margin: 0;
+    border-bottom: 1px solid #1e293b;
   }
 }
