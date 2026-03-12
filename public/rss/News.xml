@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>Dispatch - Registro de Actualizaciones del Sistema</title>
+    <link>https://dispatch-web-ard.web.app</link>
+    <description>Feed oficial de la terminal de Dispatch con los últimos parches y mejoras de la base de datos.</description>
+    <language>es-ES</language>
+    
+    <item>
+      <title>Base de datos de la Wiki actualizada con los perfiles del Equipo Z</title>
+      <link>https://dispatch-web-ard.web.app/characters</link>
+      <description>El departamento de inteligencia ha volcado con éxito los expedientes clasificados de los miembros del Equipo Z en la terminal pública. Los despachadores ya pueden consultar sus habilidades y estadísticas de combate.</description>
+      <pubDate>Thu, 12 Mar 2026 15:05:09 GMT</pubDate>
+    </item>
+    
+    <item>
+      <title>Nuevo sistema de Reportes de Incidentes activo en la terminal</title>
+      <link>https://dispatch-web-ard.web.app/</link>
+      <description>Se ha integrado el nuevo módulo de gestión de crisis. Ahora es posible crear, editar y archivar reportes de ataques de villanos en tiempo real desde la pantalla principal, agilizando la respuesta de los héroes.</description>
+      <pubDate>Wed, 11 Mar 2026 14:36:39 GMT</pubDate>
+    </item>
+    
+    <item>
+      <title>Protocolo DEFCON implementado exitosamente en la red de seguridad</title>
+      <link>https://dispatch-web-ard.web.app/</link>
+      <description>Ingeniería ha terminado de instalar los relés visuales de emergencia. En caso de brecha en el Cuartel General, el Protocolo DEFCON oscurecerá la interfaz y activará balizas rojas para poner a todo el personal en alerta máxima.</description>
+      <pubDate>Tue, 10 Mar 2026 14:26:03 GMT</pubDate>
+    </item>
+    
+    <item>
+      <title>Precisión del mapa holográfico del HQ mejorada vía satélite</title>
+      <link>https://dispatch-web-ard.web.app/contact</link>
+      <description>Hemos recalibrado los sensores de la órbita baja. La pestaña de contacto ahora muestra las coordenadas exactas de la base con una resolución impecable, facilitando la navegación de los escuadrones de rescate.</description>
+      <pubDate>Mon, 09 Mar 2026 13:54:04 GMT</pubDate>
+    </item>
+    
+  </channel>
+</rss>
