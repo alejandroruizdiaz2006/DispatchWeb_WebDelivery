@@ -67,3 +67,13 @@ I would like to express my gratitude to the React and Firebase developer communi
 ## Design Inspiration
 The dark theme, layout structure, and component styling were inspired by this Figma community UI kit:
 https://www.figma.com/community/file/1020338048666327318/dark-mode-dashboard-ui-kit
+
+## Importación y Exportación de Datos
+
+El acceso a Firebase se ha centralizado a través del directorio `services`. Además, la aplicación permite la exportación dinámica de la base de datos de personajes en formato JSON, integrándose directamente con los registros visualizados.
+
+### Archivos de ejemplo para la estructura de datos:
+A continuación se muestran ejemplos de la estructura utilizada en la base de datos en los tres formatos solicitados:
+* [Ejemplo de estructura en JSON](./public/datos.json)
+* [Ejemplo de estructura en CSV](./public/datos.csv)
+* [Ejemplo de estructura en XML](./public/datos.xml)

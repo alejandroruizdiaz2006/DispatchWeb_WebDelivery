@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<characters>
+    <character>
+        <name>Invisigirl</name>
+        <role>Heroe en pruebas</role>
+        <faction>Equipo Z</faction>
+    </character>
+    <character>
+        <name>Malevola</name>
+        <role>Heroe en pruebas</role>
+        <faction>Equipo Z</faction>
+    </character>
+</characters>

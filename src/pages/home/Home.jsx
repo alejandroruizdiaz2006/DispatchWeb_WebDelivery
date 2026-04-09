@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { collection, getDocs, addDoc, deleteDoc, updateDoc, doc } from 'firebase/firestore';
-import { db } from '../../firebase';
+import { db } from '../../services/firebaseService';
 import { teamZ, dispatchNetwork, villains } from '../../data/characters';
 import CharacterCard from '../../components/character-card/CharacterCard';
 import IncidentCard from '../../components/incident-card/IncidentCard';
